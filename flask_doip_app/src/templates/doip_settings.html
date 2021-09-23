@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <table class="table table-light table-hover">
+        <thead class="thead-light text-center">
+            <tr>
+                <th>DoIP Tester</th>
+                <th>DoIP Target ECU</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <table class="table table-light table-hover">
+                        <tbody>
+                            {% for name, value in  doip_tester.items()%}
+                                <tr>
+                                    <td class="table-primary">{{name}}</td>
+                                    <td class="table-success">{{value}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table> 
+                </td>
+                <td>
+                    <table class="table table-light table-hover">
+                        <tbody>
+                            {% for name, value in  doip_target_ecu.items()%}
+                                <tr>
+                                    <td class="table-primary">{{name}}</td>
+                                    <td class="table-success">{{value}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </td>                        
+            </tr>
+        </tbody>
+    </table>
+{% endblock body %}
